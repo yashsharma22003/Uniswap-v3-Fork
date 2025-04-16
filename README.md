@@ -8,6 +8,8 @@
 
 4. Deploy Pool ❌
 
+***Error is occuring here ^
+
 4. Deploy Position Manager – Deploy NonfungiblePositionManager (needs factory and WETH9) ✅
 
 5. Deploy Descriptor (optional) – NFT metadata helper (can skip) (❌)
@@ -37,7 +39,7 @@ forge script script/goodScript/DeployTokens.s.sol --broadcast
 forge script script/goodScript/DeployPool.s.sol --broadcast
 ```
 
-*Error is occuring here ^
+***Error is occuring here ^
 
 4.
 ```bash
