@@ -1,66 +1,19 @@
-## Foundry
+## Steps
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+1. Deploy WETH9 – Deploy wrapped ETH token contract
 
-Foundry consists of:
+2. Deploy Test Tokens – Deploy two ERC-20 tokens (TokenA and TokenB)
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+3. Deploy Factory – Deploy Uniswap V3 factory contract
 
-## Documentation
+4. Deploy Position Manager – Deploy NonfungiblePositionManager (needs factory and WETH9)
 
-https://book.getfoundry.sh/
+5. Deploy Descriptor (optional) – NFT metadata helper (can skip)
 
-## Usage
+6. Deploy Swap Router – Deploy SwapRouter for user swaps
 
-### Build
+7. Create and Initialize Pool – Use PositionManager to create a new pool with initial price
 
-```shell
-$ forge build
-```
+8. Add Liquidity – Mint a liquidity position using PositionManager
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+9. Swap Tokens – Swap between TokenA and TokenB using SwapRouter
